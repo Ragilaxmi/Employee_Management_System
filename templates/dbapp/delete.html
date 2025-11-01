@@ -1,0 +1,9 @@
+{%extends 'base.html' %}
+{%block main %}
+<form action="" method="post">
+    {%csrf_token %}
+<p>do you want to delete {{emp.empname}}? </p>
+<button name="option" value="Yes">Yes</button>
+<button name="option" value="No">No</button>
+</form>
+{%endblock %}

@@ -1,0 +1,23 @@
+{%extends 'base.html' %}
+{% block main %}
+    <form action="" method="post">
+        {%csrf_token%}
+        <label for="">a value <input type="text" name="t1"></label><br><br>
+        <label for="">b value <input type="text" name="t2"></label><br><br>
+        <button name="add" value="addition">addition</button>
+         <button name="sub" value="substraction">substraction</button>
+          <button name="div" value="division">division</button>
+           <button name="multi" value="multiplication">multiplication</button>
+       
+        {%if action == "addition" %}
+            <p style="color: blue;">{{action}}&nbsp;&nbsp;{{result}}</p>
+        {%elif action == "substraction"%}
+            <p style="color: red">{{action}}&nbsp;&nbsp;{{result}}</p>
+        {%elif action == 'division' %}    
+            <p style="color: green">{{action}}&nbsp;&nbsp;{{result}}</p>
+        {%else%}    
+             <p style="color: yellow">{{action}}&nbsp;&nbsp;{{result}}</p>
+        {%endif %}
+        
+    </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+
+h1{
+            
+    text-align: center;
+    color:white;
+    background-color: black;
+    }
+form{
+    text-align: center;
+    top: 3vh;
+    margin-top: 3vh;
+    }
+header{
+    color:green
+}
+header h1{
+    display: inline-block;
+}
+header .logout{
+    float:right;
+}
+
+    

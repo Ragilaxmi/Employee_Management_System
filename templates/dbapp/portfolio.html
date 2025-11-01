@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: black;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: 50vw 50vw ;
+            grid-template-areas: 'header header'
+            'aside main'
+            'footer footer';
+        }
+        .main header{
+            padding-left: 150px;
+            display: flex;
+            flex-direction: row;
+            color: white;
+            gap: 50px;
+            font-size: larger;
+            margin-top: 3vh;
+        }
+        aside{
+            border: 1px solid green;
+            border: none;
+        }
+        
+        .main .box-a{
+            grid-area:header;
+            border: 1px solid blue;
+            /*background-color: blue;*/
+            height: 10vh;
+            border: none;
+        }
+        .main .box-b{
+            grid-area: aside;
+            border: 1px solid #ffff00;
+            height: 80vh;
+            /*background-color: #ffff00;*/
+            border: none;
+            
+        }
+        .main .box-c{
+            grid-area: main;
+            border: 1px solid rgb(76, 214, 76);
+            height: 80vh;
+            /*background-color: #121613;*/
+            border: none;
+           
+        }
+        .main .box-d{
+            grid-area: footer;
+            border: 1px solid rgb(128, 0, 107);
+            height: 5vh;
+            /*background-color: #ff00f2;*/
+            border: none;
+        }
+        .main .box-b img{
+            margin-top: 20vh;
+            width: 25vw;
+            height: 45vh;
+            border-radius: 15px 50px;
+            margin-left: 10vw;
+            
+        }
+        h2{
+            color: #21a4f0;
+            margin-top: 20vh;
+        }
+        p{
+            color: #21a4f0;
+            font-size: 100px;
+            font-weight: 10;
+        }
+        #p1{
+            color: aliceblue;
+            font-size: 10px;
+            font-style:initial;
+            font-weight:100;
+            font-family: sans-serif;
+            margin-top: 3vh;
+        }
+        #p2{
+             font-size: 100px;
+             color: aliceblue;
+        }
+        #b1{
+            background-color: black;
+            color:#21a4f0;
+            border: 1px solid #21a4f0;
+            padding: 10px;
+            font-size: x-small;
+            margin-top: 5vh;
+        }
+        #b2{
+            background-color: #21a4f0;
+            color: black;
+            padding: 6px;
+           margin-left: 35vw;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="box-a">
+    <header>
+        <div><svg style="width: 30px; height: 30px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg></div>
+        <div>Home</div>
+        <div>About</div>
+        <div>Services</div>
+        <div>Blog</div>
+        <div>More</div>
+        <div><button id="b2">CONTACT</button></div>
+
+    </header>
+    </div>
+    <div class="box-b">
+    <aside><img src="{{employee.profile_pic.url}}" alt="">
+
+    </aside>
+    </div>
+    <div class="box-c">
+        <main><h2>{{employee.empname}}</h2>
+            <p id="p2">I'M A</p>
+            <p>{{employee.department.deptname}}</p>
+            <p id="p1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis omnis ex, totam nam eaque quaerat necessitatibus facere enim illo, reiciendis cupiditate quidem alias dolor perspiciatis amet sit deleniti quia earum? Adipisci reprehenderit cum quasi saepe impedit. Cupiditate, saepe neque qui, a aperiam ipsum voluptate officiis earum tenetur, unde facilis commodi laudantium quisquam odio possimus ullam voluptatibus. Impedit pariatur consectetur unde harum repudiandae. Praesentium delectus, eveniet accusamus sed quam minus dolor, odit recusandae qui blanditiis laborum natus rem nulla, voluptatum eos molestias quasi animi tenetur non. Laboriosam deleniti itaque minus sapiente similique earum velit sint, quasi non quas voluptate dignissimos beatae.</p>
+             <button id="b1">DOWNLOAD CV</button>
+        </main>
+
+    </div>
+    <div class="box-d">
+    <footer></footer>
+    </div>
+    </div>
+</body>
+</html>

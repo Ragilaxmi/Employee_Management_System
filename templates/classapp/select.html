@@ -1,0 +1,6 @@
+{%extends 'base.html' %}
+{% block main %}
+{%for emp in object_list %}
+<p>{{emp.empno}}{{emp.empname}}-{{emp.salary}}</p>
+{%endfor %}
+{%endblock %}

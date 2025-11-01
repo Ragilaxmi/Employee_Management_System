@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block main %}
+{%if request.user.is_superuser %}
+<a href="{% url 'inserturl' %}"><h2>ADD+</h2></a>
+{%endif %}
+{% for msg in messages %}
+<p>{{msg}}</p>
+{%endfor %}
+<table border="1" cellspacing="0">
+    <tr><th>empno</th><th>empname</th><th>salary</th><th>deptno</th><th></th><th>profile_pic</th><th>videos</th></tr>
+{% for emp in employee %}
+<tr><td>{{emp.empno}}</td><td><a href="{%url 'updateurl' emp.empno %}">{{emp.empname}}</a></td><td>{{emp.salary}}</td><td>{{emp.department.deptname}}</td><td><a href="{% url 'deleteurl' emp.empno %}"><button style="background-color: red; color: white; border: none; cursor: pointer;">X</button></a></td><td>
+    {%if emp.profile_pic %}
+    <a href="{%url 'portfolioURL' emp.empno %}"><img style="width: 70px; height: 50px;"  src="{{emp.profile_pic.url}}" alt=""></a>
+    {%endif %}
+</td>
+<td>
+    {%if emp.video %}
+    <video  style="width: 80px;height: 50px;" src="{{emp.video.url}}" autoplay controls></video>
+    {%endif %}
+</td>
+</tr>
+
+{%endfor %}
+</table>
+<div style="text-align: center;">
+    {%if employee.has_previous %}
+    <a href="{% url 'selecturl' employee.previous_page_number %}"><strong>previous</strong></a>&nbsp;&nbsp;&nbsp;
+    {%endif %}
+   <strong>{{employee.number}}</strong> &nbsp;&nbsp;&nbsp;
+   {%if employee.has_next %}
+    <a href="{%url 'selecturl' employee.next_page_number %}"> <strong>next</strong></a>
+    {%endif %}
+</div>
+{%endblock %}

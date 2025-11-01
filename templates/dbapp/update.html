@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+{%block main %}
+<form action="" method="post">
+    {%csrf_token %}
+    <label for="">
+        empno:<input type="text" value="{{emprec.empno}}" disabled> 
+    </label><br><br>
+    <label for="">
+        empname: <input type="text" value='{{emprec.empname}}' name="empname">
+    </label><br><br>
+    <label for="">
+        empsalary: <input type="text" value='{{emprec.salary}}' name="empsal">
+    </label><br><br>
+    <label for=""><select name="dept" id="">
+       {%for dept in departments %}
+            {%if emprec.department.deptno == dept.deptno %}
+                <option value="{{dept.deptno}}" selected>{{dept.deptname}}</option>
+            {% else %}
+                <option value="{{dept.deptno}}">{{dept.deptname}}</option>
+            {%endif %}
+       {% endfor  %}
+       </select>
+        </label><br><br>
+    <label for="">
+        <input type="submit" value="update">
+    </label>
+</form>
+{%endblock %}

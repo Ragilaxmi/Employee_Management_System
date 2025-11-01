@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="">items:
+        <input type="text" name="t1">
+    </label>
+    <input type="submit" value="ADD">
+</form>
+<ul>
+    {%for it in items %}
+    <li>{{it}} <a href="{%url 'tododeleteurl' it %}">X</a></li>
+    {%endfor %}
+</ul>
+{% endblock %}

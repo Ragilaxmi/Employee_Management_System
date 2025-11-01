@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{%block main %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for=""> 
+        employee number
+        <input type="text" name="eno"><br><br>
+    </label>
+    <label for="">
+        employee name
+        <input type="text" name="ename"><br><br>
+    </label>
+    <label for="">
+        employee salary
+        <input type="text" name="sal"><br><br>
+    </label>
+    <label for="">
+        departments: <select name="dept" id="">
+            {%for dpt in departments %}
+            <option value="{{dpt.deptno}}">{{dpt.deptname}}</option>
+            {%endfor %}
+        </select>
+        
+        
+    </label><br><br>
+    <label for="">profile_pic:
+        <input type="file" name="epic">
+    </label><br>
+    <label for=""> video:
+        <input type="file" name="video">
+    </label><br><br>
+    <input type="submit">
+    {%if employee %} 
+<p>Employee inserted successfully</p>
+<p>{{employee.empname}}-{{employee.salary}}</p>
+
+</form>
+
+
+
+{%endif %}
+{%endblock %}
